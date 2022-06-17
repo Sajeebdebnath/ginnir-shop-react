@@ -1,6 +1,30 @@
-import { BsCartPlus } from "react-icons/bs"
-import { Link } from "react-router-dom"
+import { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import ProductItem from "../components/ProductItem"
+import { productAllFetch } from "../redux/actionCreators/productActionCreator"
 const Home = () => {
+  const dispatch = useDispatch()
+  const allProductList = useSelector((state) => state.product.allProducts)
+  console.log(allProductList)
+
+  useEffect(() => {
+    dispatch(productAllFetch())
+  }, [dispatch])
+
+  const allProducts = allProductList?.map((product) => {
+    return (
+      <div className='col-lg-3' key={product.id}>
+        <ProductItem product={product} />
+      </div>
+    )
+  })
+  const productSkeletons = [1, 2, 3, 4, 5, 6, 7, 8].map((index) => {
+    return (
+      <div className='col-lg-3 mb-5' key={index}>
+        <p>Loading</p>
+      </div>
+    )
+  })
   return (
     <div>
       <div className='homepage-area'>
@@ -24,7 +48,7 @@ const Home = () => {
                 <h3 className='product-title'>All Products</h3>
                 <div className='product-header'>
                   <div className='product-counter'>
-                    <p>65 items</p>
+                    <p>{allProductList !== null ? allProductList.length : "0"} items</p>
                   </div>
                   <div className='product-filter'>
                     <p>sort by</p>
@@ -44,33 +68,11 @@ const Home = () => {
                 </div>
                 <div className='all-product-area'>
                   <div className='row'>
-                    <div className='col-lg-3'>
-                      <div className='single-product-item'>
-                        <div className='product-img'>
-                          <img
-                            src='https://images.nibelu.com/products/shop.beauty-heroes.com/ursa-major/3714/a2eaf0ae31012fa074bd85324555e5a3b3f0c5be.jpg'
-                            alt=''
-                          />
-                          <Link to='/' className='btn product-view-button'>
-                            View Product
-                          </Link>
-                        </div>
-                        <div className='product-text'>
-                          <div className='product-category-icon'>
-                            <div className='category'>Fruits</div>
-                            <div className='product-cart-icon'>
-                              <span>
-                                <BsCartPlus />
-                              </span>
-                            </div>
-                          </div>
-                          <div className='product-info'>
-                            <h5 className='product-title'>Green Apple</h5>
-                            <p className='price'>$30</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    {allProductList === null && productSkeletons}
+                    {allProductList !== null && allProductList.length === 0
+                      ? "No Product Posted Yet "
+                      : allProducts}
+                    {allProducts?.length === 0 && "No Product Available"}
                   </div>
                 </div>
               </div>
