@@ -93,6 +93,173 @@
 }
 /* ------------------------- Header Section CSS End --------------------- */
 
+/* ------------------------- All Product Section CSS Start --------------------- */
+.homepage-area {
+  padding: 30px 0;
+}
+
+.product-categories-area h3 {
+  padding: 15px;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  border-bottom: 1px solid #e5e6e7;
+}
+
+.product-categories-area {
+  border: 1px solid #e5e6e7;
+  height: 100%;
+}
+
+.product-categories-area .category-list {
+  padding: 15px;
+}
+
+.product-categories-area .category-list ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.product-categories-area .category-list ul li {
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.product-categories-area .category-list ul li:hover,
+.product-categories-area .category-list ul li.active {
+  color: var(--bgColor);
+}
+
+.product-items-area {
+  padding: 0 20px;
+}
+
+.product-items-area .product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-items-area .product-header .product-filter {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.product-items-area .product-header .product-filter p {
+  text-transform: uppercase;
+}
+
+.product-items-area .product-header .product-filter form {
+  display: flex;
+  gap: 15px;
+}
+
+.product-items-area .product-header .product-filter form > select {
+  padding: 7px 12px;
+  border-radius: 7px;
+  border: 1px solid #e5e6e7;
+  outline: none;
+  text-transform: capitalize;
+}
+
+.product-items-area .product-header .product-counter {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #646464d1;
+}
+
+.single-product-item .product-img {
+  position: relative;
+  transition: 0.3s;
+  z-index: 9;
+}
+
+.single-product-item .product-img img {
+  width: 100%;
+  height: 200px;
+}
+
+.single-product-item .product-img .product-view-button {
+  display: inline-block;
+  border: 1px solid black;
+  background: transparent;
+  font-size: 12px;
+  width: 60%;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -30%;
+  transition: 0.3s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 5;
+}
+
+.single-product-item .product-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.single-product-item .product-info .product-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.single-product-item {
+  margin-bottom: 25px;
+}
+
+.single-product-item .product-img .product-view-button:hover {
+  border-color: var(--bgColor);
+  background: var(--bgColor);
+  color: white;
+}
+
+.single-product-item .product-img:hover .product-view-button {
+  visibility: visible;
+  opacity: 1;
+}
+
+.single-product-item .product-img:hover img {
+  opacity: 0.6;
+}
+.all-product-area {
+  margin-top: 30px;
+}
+.single-product-item .product-text .product-category-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.single-product-item .product-text .product-category-icon .category {
+  font-weight: 600;
+}
+
+.single-product-item .product-text .product-category-icon .product-cart-icon {
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.single-product-item .product-text .product-category-icon .product-cart-icon:hover {
+  color: var(--bgColor);
+}
+
+.product-items-area .product-title {
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+/* ------------------------- All Product Section CSS End --------------------- */
+
 /* ------------------------- Footer Section CSS Start --------------------- */
 .footer-area {
   background: black;
