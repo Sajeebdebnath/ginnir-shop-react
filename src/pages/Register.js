@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom"
+import FormButton from "../components/FormButton"
+import FormGroup from "../components/FormGroup"
+import FormGroupCheck from "../components/FormGroupCheck"
 const Register = () => {
   return (
     <div>
@@ -10,23 +13,10 @@ const Register = () => {
                 <h3>Create an Account</h3>
                 <div className='registration-form'>
                   <form action=''>
-                    <div className='form-group'>
-                      <label htmlFor='email'>Email</label>
-                      <input type='email' className='form-control' placeholder='Your Email' />
-                    </div>
-                    <div className='form-group'>
-                      <label htmlFor='password'>Password</label>
-                      <input type='password' className='form-control' placeholder='*******' />
-                    </div>
-                    <div className='form-group checkbox'>
-                      <input type='checkbox' className='form-checkbox' id='check' />
-                      <label className='px-2' htmlFor='check'>
-                        I agree to the Terms of service & privacy policy.
-                      </label>
-                    </div>
-                    <button type='submit' className='btn btn-main'>
-                      Register
-                    </button>
+                    <FormGroup label='Email' type='email' name='email' placeholder='Your Email' />
+                    <FormGroup label='Password' type='password' name='password' placeholder='*******' />
+                    <FormGroupCheck />
+                    <FormButton name='Register' />
                   </form>
                 </div>
                 <div className='previous-account'>
