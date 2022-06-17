@@ -25,6 +25,9 @@ const Home = () => {
       </div>
     )
   })
+
+  const categories = [...new Set(allProductList?.map((category) => category.category))]
+  console.log(categories)
   return (
     <div>
       <div className='homepage-area'>
@@ -35,10 +38,13 @@ const Home = () => {
                 <h3>Categories</h3>
                 <div className='category-list'>
                   <ul>
-                    <li>Mlik</li>
-                    <li>Fruits</li>
-                    <li>Vegitable</li>
-                    <li>Snackes</li>
+                    {
+                      categories.map((name,index)=>{
+                        return (
+                          <li key={index}>{name}</li>
+                        );
+                      })
+                    }
                   </ul>
                 </div>
               </div>
