@@ -1,5 +1,5 @@
 /*!
- * Name : Sajeeb Debnath Portfolio
+ * Name : Basic Ecommerce
  * Version: 1.0.0
  * Author: Sajeeb Debnath
  * Author URL: fb.me/sajeebdebnath.cse
@@ -7,714 +7,223 @@
  * Sajeeb Debnath 
 
  * Table of Contents:
-    A. Home
+    A. Homepage
         01. Header Section
-        02. Hero Section
-        03. About Section
-        04. Coding Skills Section
-        05. Resume Section
-        06. Service Section
-        07. Works Section
-        08. Hire Me Section
-        09. Article Section
-        10. Contact Section
         11. Footer Section
+    B. Product Details Page
+        01. Header Section
+        11. Footer Section
+    C. Cart Page
+        01. Header Section
+        11. Footer Section
+    C. Registration & Login Page
+        01. Header Section
+        11. Footer Section
+        
 */
 
-/* ------------------------- Home Start --------------------- */
+/* ------------------------- Homepage Start --------------------- */
+
 /* ------------------------- Header Section CSS Start --------------------- */
-.header-top-area {
-  background: transparent;
-  user-select: none;
-  padding: 15px 0px;
-  position: fixed;
-  width: 100%;
-  height: 70px;
-  top: 0;
-  z-index: 99;
-}
-.header-top-area.active {
-  background: #ffffff;
-  box-shadow: 0 2px rgb(238, 238, 238);
-}
-.header-top-area .logo {
+.header-area-wrapper {
   display: flex;
-  gap: 8px;
+  justify-content: space-between;
+  padding: 10px 40px;
+  align-items: center;
+  border-bottom: 1px solid #e5e6e7;
 }
-.header-top-area .logo img {
-  -webkit-user-drag: none;
+
+.header-area-wrapper .logo img {
+  width: 60px;
 }
-.header-top-area .logo object {
-  height: 30px;
-}
-.menu-area {
-  text-align: right;
+
+.header-area-wrapper .header-links {
   display: flex;
   align-items: center;
-  justify-content: right;
-  transition: all 0.3s ease-in-out;
-}
-.menu-area nav {
-  display: inline-block;
-}
-.menu-area nav ul {
-  display: flex;
   gap: 30px;
 }
-.menu-area nav ul li {
-  border-bottom: 2px solid transparent;
-  transition: 0.5s;
-}
-.menu-area nav ul li:hover {
-  border-bottom: 2px solid white;
-}
-.menu-area nav ul li a {
-  font-size: var(--smallFont);
-  text-decoration: none;
-  color: white;
-}
-.menu-area nav ul li a:hover,
-.menu-area nav ul li .active {
+
+.header-area-wrapper .header-links .product-cart-icon {
+  position: relative;
+  font-size: 25px;
   color: var(--bgColor2);
 }
 
-.navigation {
-  position: relative;
+.header-area-wrapper .header-links .product-cart-icon .cart-item {
+  position: absolute;
+  font-size: 12px;
+  background: var(--bgColor);
+  width: 20px;
+  height: 20px;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
+  right: -16px;
+  top: -5px;
+}
+
+.header-area-wrapper .header-links .account-link {
   display: flex;
-  align-items: center;
-  margin: 0 40px;
+  gap: 20px;
+  font-size: 16px;
 }
 
-.navigation .menu-area {
-  margin-left: auto;
+.header-area-wrapper .search-bar {
+  position: relative;
+  width: 30%;
 }
 
+.header-area-wrapper .search-bar span {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  color: #00000073;
+  margin-top: -12px;
+}
+
+.header-area-wrapper .search-bar input {
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 14px;
+}
+.header-area-wrapper .search-bar input:focus {
+  border-color: var(--bgColor2);
+  box-shadow: 0 0 0 0.25rem #62151f1f;
+}
 /* ------------------------- Header Section CSS End --------------------- */
 
-/* -------------------------Hero Section CSS Start --------------------- */
-.hero-area {
-  background: url(/assets/images/hero-bg.jpg);
-  background-repeat: no-repeat;
-  background-color: #c9f0f2;
-  height: 100vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  background-size: cover;
-  background-attachment: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.hero-area::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  opacity: 0.7;
-  backdrop-filter: blur(2px);
-}
-.hero-text-wrapper {
-  position: relative;
-  z-index: 9;
-  text-align: center;
-}
-.hero-text h1 {
-  font-size: 50px;
-  color: white;
-}
-
-.hero-text h1 span {
-  font-weight: 800;
-}
-.hero-text h2 {
-  font-size: 60px;
-  color: white;
-  font-family: var(--fontFamily);
-}
-
-.hero-text h2 .thin {
-  font-weight: 100;
-  text-transform: capitalize;
-}
-
-.hero-text h2 .title {
-  font-weight: 400;
-  font-family: var(--fontFamily2);
-}
-.header-social-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.header-social-icon a {
-  width: 35px;
-  height: 35px;
-  background: var(--bgColor);
-  line-height: 35px;
-  color: white;
-  border-radius: 50%;
-  text-align: center;
-  transition: 0.3s;
-}
-
-.header-social-icon a i {
-  font-size: 15px;
-}
-
-.header-social-icon a:hover {
-  background: white;
-  color: black;
-}
-
-/* -------------------------Hero Section CSS End --------------------- */
-
-/* -------------------------About Section CSS Start --------------------- */
-.about-me-bg {
-  background: url(/assets/images/me2.jpg) center top / cover no-repeat;
-  width: 100%;
-  height: 400px;
-  border-radius: 1%;
-  box-shadow: rgb(0 0 0 / 12%) 3px 3px 10px 0px;
-}
-.about-area-text {
-  padding-left: 20px;
-  width: 90%;
-  margin: auto;
-}
-.about-area-text .about-heading h2 {
-  font-weight: 600;
-  margin-bottom: 15px;
-  font-size: 25px;
-}
-
-.about-area-text .about-heading p {
-  font-size: 14px;
-  margin-bottom: 15px;
-  text-align: justify;
-}
-
-.status-address {
-  width: 100%;
-}
-
-.status-address .status-cell {
-  width: 48%;
-  display: inline-block;
-  margin-bottom: 20px;
-}
-
-.status-address .status-cell .status-title {
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.status-address .status-cell p {
-  font-size: 16px;
-  color: var(--textColor);
-}
-
-.download-cv .btn.download {
-  padding: 10px 30px;
-}
-/* -------------------------About Section CSS End --------------------- */
-
-/* -------------------------Skills Section CSS Start --------------------- */
-.my-skills-area {
-  background-image: url(../images/skills-bg.jpg);
-  color: white;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
-  background-attachment: fixed;
-  z-index: 3333;
-  padding: 80px 0;
-}
-
-.my-skills-area::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #242424;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  opacity: 0.9;
-}
-.my-skills-area .section-title h3 {
-  margin-bottom: -10px;
-}
-.single-skills-item {
-  height: 2px;
-  background: white;
-  margin-top: 60px;
-}
-
-.skills-bar-progress {
-  position: relative;
-  height: 2px;
-  background: #888888;
-}
-
-.skills-bar-info {
-  position: absolute;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  top: -25px;
-}
-
-.skillsb-bar-wrapper {
-  margin-right: 60px;
-}
-
-.skills-area-text {
-  margin: 0 10px;
-  margin-top: 60px;
-}
-
-.skills-area-text h3 {
-  color: white;
-  font-size: 30px;
-  font-weight: 300;
-  margin-bottom: 25px;
-}
-
-.skills-area-text p {
-  color: #c7c6c6;
-  text-align: justify;
-}
-/* -------------------------Skills Section CSS End --------------------- */
-
-/* -------------------------Education Section CSS Start --------------------- */
-.education-experience-area {
-  position: relative;
-  margin-top: 30px;
-}
-
-.education-experience-area::after {
-  content: "";
-  background-image: url(https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
-  background-attachment: fixed;
-  width: 400px;
-  height: 400px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  margin: auto;
-  right: 0;
-  border-radius: 50%;
-  z-index: -1;
-}
-.single-experience-item {
-  position: relative;
-  padding-right: 220px;
-  text-align: right;
-}
-.col-lg-6:nth-child(2) .single-experience-item,
-.col-lg-6:nth-child(4) .single-experience-item,
-.col-lg-6:nth-child(6) .single-experience-item {
-  text-align: left;
-  padding-left: 220px;
-  padding-right: 0;
-  margin-right: 0;
-}
-
-.single-experience-item .feature-icon {
-  position: absolute;
-  left: auto;
-  right: 50px;
-  background: #ffffff;
-  width: 150px;
-  height: 150px;
-  text-align: center;
-  border-radius: 50%;
-  padding: 15px;
-  top: -22px;
-}
-.col-lg-6:nth-child(2) .single-experience-item .feature-icon,
-.col-lg-6:nth-child(4) .single-experience-item .feature-icon,
-.col-lg-6:nth-child(6) .single-experience-item .feature-icon {
-  right: auto;
-  left: 50px;
-}
-.col-lg-6:nth-child(3) .single-experience-item,
-.col-lg-6:nth-child(4) .single-experience-item {
-  margin-top: 80px;
-}
-.single-experience-item .img-wrapper {
-  width: 100%;
-  height: 100%;
-  box-shadow: rgb(0 0 0 / 12%) 3px 3px 10px 0px;
-  border-radius: 50%;
-  line-height: 120px;
-  border: 1px solid #80808000;
-}
-.single-experience-item .img-wrapper img {
-  width: 64px;
-  height: 64px;
-}
-.experience-details-info {
-  transition: 0.3s;
-}
-.experience-details-info:hover {
-  text-shadow: 0 0 black;
-}
-.experience-details-info .duration-year {
+/* ------------------------- Footer Section CSS Start --------------------- */
+.footer-area {
   background: black;
-  display: inline-block;
+}
+
+.footer-top-area {
+  padding: var(--sectionPadding);
   color: white;
-  font-size: 12px;
-  padding: 3px 8px;
-  transition: 0.3s;
-  font-weight: 600;
-  margin-bottom: 5px;
 }
 
-.experience-details-info .experience-title {
-  font-size: 20px;
-  font-weight: 600;
+.footer-items .footer-logo img {
+  width: 120px;
 }
 
-.experience-details-info .experience-institue {
-  color: #a0a0a0;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-/* -------------------------Education Section CSS End --------------------- */
-
-/* -------------------------Service Section CSS Start --------------------- */
-.service-area {
-  background-color: #000000d6;
-  background-size: cover;
-  background-position: center;
-  padding: 80px 0;
-}
-
-.service-item-wrapper {
-  padding: 30px 75px 30px 30px;
-  height: 270px;
-  background-image: url(/assets/images/service/1.jpg);
-  background-color: #333333;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-.service-item-wrapper:hover {
-  transform: scale(1.02);
-}
-.service-item-wrapper .service-icon {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  line-height: 70px;
-  text-align: center;
-  box-shadow: 3px 3px 10px 0px rgb(0 0 0 / 12%);
-  background-color: white;
-  margin-bottom: 10px;
-}
-
-.service-item-wrapper .service-icon img {
-  width: 35px;
-  height: 35px;
-}
-
-.service-text-wrapper h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.service-text-wrapper p {
-  font-size: 14px;
-}
-
-.col-lg-4:nth-child(2) .service-item-wrapper {
-  background-image: url(/assets/images/service/2.jpg);
-}
-.col-lg-4:nth-child(3) .service-item-wrapper {
-  background-image: url(/assets/images/service/3.jpg);
-}
-/* -------------------------Service Section CSS End --------------------- */
-
-/* -------------------------Project Section CSS Start --------------------- */
-.project-items-wrapper {
-  display: flex;
-  gap: 20px;
-  justify-content: space-between;
-  align-items: center;
-}
-.single-project-item {
-  width: 350px;
-  transition: 0.3s;
-  position: relative;
-  box-shadow: rgb(0 0 0 / 12%) 3px 3px 10px 0px;
-}
-.single-project-item .project-img img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  object-position: top;
-}
-.project-items-wrapper .project-information {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 0%;
-  background: #616161cc;
-  color: white;
-  transition: 0.5s;
-  padding: 20px;
-  opacity: 0;
-  display: flex;
-  align-items: center;
-  backdrop-filter: blur(2px);
-  visibility: hidden;
-}
-.single-project-item:hover .project-information {
-  visibility: visible;
-  opacity: 1;
-  height: 100%;
-}
-.project-information-wrapper .project-name {
-  color: white;
-  font-weight: 800;
-  margin-bottom: 10px;
-  font-size: 24px;
-}
-
-.project-information-wrapper .project-name span {
-  font-size: 20px;
-  padding-left: 5px;
-  transition: 0.3s;
-}
-
-.project-information-wrapper .project-name:hover span {
-  padding-left: 15px;
-}
-
-.project-information-wrapper .project-details {
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.project-information-wrapper .project-technology span {
-  border: 2px solid white;
-  padding: 5px 8px;
-  display: inline-block;
-  margin-bottom: 7px;
-  border-radius: 3px;
-  color: white;
+.footer-items .footer-title {
   font-size: 10px;
-  margin-right: 7px;
+  text-transform: uppercase;
+  color: #fafafa80;
+  font-weight: 200;
+  letter-spacing: 3px;
 }
 
-.project-information-wrapper .project-technology {
+.footer-items .footer-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-items .footer-menu ul li a {
+  color: white;
+  transition: 0.3s;
   display: inline-block;
 }
 
-/* -------------------------Project Section CSS End --------------------- */
-
-/* -------------------------Hire Me Section CSS Start --------------------- */
-.hire-me-area {
-  background-color: #2b2b2b;
-}
-
-.hire-me-text-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.hire-me-text-wrapper .hire-me-text h2 {
-  color: white;
-  text-transform: capitalize;
-  font-weight: 600;
-}
-
-.hire-me-text-wrapper .btn.hire-me {
-  background: white;
-  font-weight: 600;
-}
-/* -------------------------Hire Me Section CSS End --------------------- */
-
-/* -------------------------Blog Section CSS Start --------------------- */
-.blog-item-wrapper {
-  background: white;
-  transition: 0.3s;
-  box-shadow: 0px 5px 5px 0px #80808038;
-}
-
-.blog-item-wrapper .blog-bg {
-  width: 100%;
-  height: 220px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: gray;
-  background-size: cover;
-  border-radius: 5px;
-}
-.blog-text-area {
-  padding: 10px 15px;
-  padding-bottom: 20px;
-}
-
-.blog-tags .tag {
-  color: #a0a0a0;
-  font-weight: 600;
-  margin-bottom: 10px;
-  font-size: 12px;
-}
-
-.blog-tags {
-  display: flex;
-  gap: 15px;
-}
-
-.blog-title {
-  font-size: 20px;
-  font-family: inherit;
-}
-
-.blog-title a {
-  color: #000000b5;
-  font-weight: 600;
-}
-
-.blog-text-area p {
-  margin: 10px 0;
-  text-align: justify;
-}
-
-.blog-btn {
-  color: #000000b3;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.blog-btn:hover {
-  color: black;
-}
-
-.blog-btn i {
-  padding-left: 3px;
-}
-
-.blog-item-wrapper:hover {
-  box-shadow: 0px 5px 5px 0px #80808066;
-  transform: scale(1.02);
-}
-/* -------------------------Blog Section CSS End --------------------- */
-
-/* -------------------------Contact Section CSS Start --------------------- */
-.contact-area {
-  background: #2b2b2b none repeat scroll 0 0;
-  color: white;
-}
-
-.contact-area .section-title {
-  text-align: left;
-}
-.contact-area .section-title h3 {
-  margin-bottom: 10px;
-}
-
-.contact-area-text .contact-text {
-  margin-bottom: 20px;
-}
-
-.contact-address-list .address-item {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.contact-address-list .address-icon {
-  width: 45px;
-  height: 45px;
-  background: transparent;
-  text-align: center;
-  line-height: 45px;
-  border-radius: 50%;
-  border: 1px solid #7c7878;
-  font-size: 16px;
-  color: #7c7878;
-}
-
-.address-item .address-text h5 {
-  font-size: 18px;
-}
-
-.contact-form {
-  width: 70%;
-  margin: auto;
-}
-
-.form-field input,
-.form-field textarea {
-  width: 100%;
-  border: none;
-  margin-bottom: 15px;
-  background: transparent;
-  padding: 10px 0;
-  border-bottom: 1px solid #7c7878;
-  color: #7c7878;
-}
-
-.form-field textarea {
-  border: 1px solid #7c7878;
-  padding: 10px 15px;
+.footer-items .footer-menu {
   margin-top: 25px;
 }
-.form-field .btn.contact {
-  border-radius: 0;
-  text-transform: uppercase;
-  background: #393939 none repeat scroll 0 0;
-  box-shadow: none;
-  padding: 10px 40px;
-  border: none;
+
+.footer-items .footer-menu ul li:hover a {
+  color: #333;
+}
+
+.footer-items h3 {
+  font-size: 20px;
+  color: beige;
   font-weight: 400;
-  color: #e5e5e5;
+}
+
+.footer-items.newsletter p {
+  font-size: 12px;
+  color: gray;
+  margin: 15px 0;
+}
+
+.newsletter-form {
+  position: relative;
+}
+
+.newsletter-form input {
+  border: none;
+  padding: 10px 30px;
+  border-radius: 5px;
+  width: 100%;
+  background: #1a1a1a;
+  color: white;
+  padding-left: 35px;
+}
+
+.newsletter-form .icon {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  color: gray;
+  font-size: 16px;
+}
+
+.newsletter-form .newsletter-btn {
+  position: absolute;
+  right: 0;
+  font-size: 24px;
+  background: transparent;
+  border: none;
+  top: 0;
+  color: white;
+}
+
+.newsletter-form input:focus {
+  outline: none;
+}
+.footer-bottom-area {
+  border-top: 1px solid #f2f2f233;
+  padding: 20px 0;
+}
+
+.footer-bottom-area .copy-right-text {
+  color: white;
+  font-size: 12px;
+  font-weight: 200;
+}
+
+.footer-bottom-right-wrapper {
+  display: flex;
+  justify-content: end;
+  gap: 40px;
+}
+
+.footer-bottom-right-wrapper .terms ul {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-bottom-right-wrapper .terms ul a {
+  color: #fafafa80;
+  font-weight: 200;
+  font-size: 12px;
   transition: 0.3s;
 }
 
-.form-field .btn.contact:hover {
-  background: black;
-  color: white;
-}
-.form-field input:focus,
-.form-field textarea:focus {
-  outline: none;
-  background-color: none;
-}
-/* -------------------------Contact Section CSS End --------------------- */
-
-/* -------------------------Footer Section CSS Start --------------------- */
-.footer-area {
-  background: #202020 none repeat scroll 0 0;
-  color: #929292;
-  padding: 20px 0;
-  font-size: 13px;
-}
-.footer-area a:hover {
+.footer-bottom-right-wrapper .terms ul li:hover a {
   color: white;
 }
 
-.footer-social {
+.footer-bottom-right-wrapper .footer-social {
   display: flex;
-  gap: 25px;
-  justify-content: end;
+  gap: 15px;
 }
-/* -------------------------Footer Section CSS End --------------------- */
+
+.footer-bottom-right-wrapper .footer-social a {
+  color: white;
+  font-size: 14px;
+}
+/* ------------------------- Footer Section CSS End --------------------- */
+
+/* ------------------------- Homepage End --------------------- */
