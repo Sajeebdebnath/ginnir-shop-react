@@ -9,16 +9,18 @@
  * Table of Contents:
     A. Homepage
         01. Header Section
-        11. Footer Section
+        02. ALL Categories & Product Section
+        03. Footer Section
     B. Product Details Page
         01. Header Section
-        11. Footer Section
+        03. Footer Section
     C. Cart Page
         01. Header Section
-        11. Footer Section
+        03. Footer Section
     C. Registration & Login Page
         01. Header Section
-        11. Footer Section
+        02. Registration Form Section
+        03. Footer Section
         
 */
 
@@ -399,3 +401,55 @@
 /* ------------------------- Footer Section CSS End --------------------- */
 
 /* ------------------------- Homepage End --------------------- */
+
+/* ------------------------- Registration & Login Page CSS Start --------------------- */
+.account-registration-area {
+  background: var(--sectionBg);
+}
+
+.registration-area-wrapper {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0.5px 0.866px 5px 0px rgb(0 0 0 / 20%);
+  margin: 50px 0;
+}
+
+.registration-area-wrapper h3 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.registration-area-wrapper .registration-form {
+  margin-top: 25px;
+}
+
+.registration-area-wrapper .registration-form label {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.registration-area-wrapper .registration-form .form-group {
+  margin-bottom: 15px;
+}
+
+.registration-area-wrapper .registration-form .form-group input:focus {
+  box-shadow: 0 0 0 0.25rem #62151f1f;
+  border-color: var(--bgColor2);
+}
+
+.registration-area-wrapper .registration-form .form-group input {
+  font-size: 14px;
+  padding: 10px 15px;
+}
+.registration-area-wrapper .previous-account {
+  text-align: center;
+  font-size: 16px;
+}
+
+.registration-area-wrapper .previous-account a {
+  color: var(--bgColor);
+  font-weight: 600;
+}
+/* ------------------------- Registration & Login Page CSS End --------------------- */

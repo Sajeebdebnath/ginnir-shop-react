@@ -1,23 +1,32 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import ProductItem from "../components/ProductItem"
 import { productAllFetch } from "../redux/actionCreators/productActionCreator"
 const Home = () => {
   const dispatch = useDispatch()
   const allProductList = useSelector((state) => state.product.allProducts)
-  console.log(allProductList)
+  const categories = [...new Set(allProductList?.map((category) => category.category))]
+  const [selectCategory, setSelectCategory] = useState("")
 
   useEffect(() => {
     dispatch(productAllFetch())
   }, [dispatch])
 
-  const allProducts = allProductList?.map((product) => {
-    return (
-      <div className='col-lg-3' key={product.id}>
-        <ProductItem product={product} />
-      </div>
-    )
-  })
+  const allProducts = allProductList
+    ?.filter((product) => {
+      if (selectCategory === "") {
+        return product
+      } else if (product.category === selectCategory) {
+        return product
+      }
+    })
+    .map((product) => {
+      return (
+        <div className='col-lg-3' key={product.id}>
+          <ProductItem product={product} />
+        </div>
+      )
+    })
   const productSkeletons = [1, 2, 3, 4, 5, 6, 7, 8].map((index) => {
     return (
       <div className='col-lg-3 mb-5' key={index}>
@@ -26,8 +35,10 @@ const Home = () => {
     )
   })
 
-  const categories = [...new Set(allProductList?.map((category) => category.category))]
-  console.log(categories)
+  const setCategory = (name) => {
+    setSelectCategory(name)
+  }
+
   return (
     <div>
       <div className='homepage-area'>
@@ -38,13 +49,18 @@ const Home = () => {
                 <h3>Categories</h3>
                 <div className='category-list'>
                   <ul>
-                    {
-                      categories.map((name,index)=>{
-                        return (
-                          <li key={index}>{name}</li>
-                        );
-                      })
-                    }
+                    <li onClick={() => setSelectCategory("")}>All Category</li>
+                    {categories.map((name, index) => {
+                      return (
+                        <li
+                          className={name === selectCategory ? "active" : ""}
+                          key={index}
+                          onClick={() => setCategory(name)}
+                        >
+                          - {name}
+                        </li>
+                      )
+                    })}
                   </ul>
                 </div>
               </div>
@@ -54,7 +70,7 @@ const Home = () => {
                 <h3 className='product-title'>All Products</h3>
                 <div className='product-header'>
                   <div className='product-counter'>
-                    <p>{allProductList !== null ? allProductList.length : "0"} items</p>
+                    <p>{allProductList !== null ? allProducts.length : "0"} items</p>
                   </div>
                   <div className='product-filter'>
                     <p>sort by</p>
