@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
 import PrivateOutlet from "./components/PrivateOutlet"
+import PublicOutlet from "./components/PublicOutlet"
 import Cart from "./pages/Cart"
 import Home from "./pages/Home"
 import Login from "./pages/Login"
@@ -23,8 +24,14 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/products/:id' element={<ProductDeatils />} />
-        <Route path='/register' element={<Register />} />
-        <Route path='/login' element={<Login />} />
+
+        {/* Public Routes not for Authenticate User */}
+        <Route path='/*' element={<PublicOutlet />}>
+          <Route path='register' element={<Register />} />
+          <Route path='login' element={<Login />} />
+        </Route>
+
+        {/* Private Routes only for Authenticate User */}
         <Route path='/logout' element={<Logout />} />
         <Route path='/*' element={<PrivateOutlet />}>
           <Route path='cart' element={<Cart />} />
