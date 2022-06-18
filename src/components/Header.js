@@ -47,7 +47,7 @@ const Header = () => {
                 ) : (
                   <>
                     <Link to='#'>{userEmail}</Link>
-                    <Link to='/register'>Logout</Link>
+                    <Link to='/logout'>Logout</Link>
                   </>
                 )}
               </div>

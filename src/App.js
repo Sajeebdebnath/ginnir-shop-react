@@ -6,6 +6,7 @@ import Header from "./components/Header"
 import Cart from "./pages/Cart"
 import Home from "./pages/Home"
 import Login from "./pages/Login"
+import Logout from "./pages/Logout"
 import ProductDeatils from "./pages/ProductDetails"
 import Register from "./pages/Register"
 import { authCheck } from "./redux/actionCreators/authActionCreator"
@@ -23,6 +24,7 @@ function App() {
         <Route path='/products/:id' element={<ProductDeatils />} />
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/logout' element={<Logout />} />
         <Route path='/cart' element={<Cart />} />
       </Routes>
       <Footer />
