@@ -4,6 +4,26 @@
       "email": "momit@test.com",
       "password": "$2a$10$ld9.oug8WB/y08NdpaJyAu/bq3pMKJwi0kYDv7FAfyhcw0k.PeBee",
       "id": 1
+    },
+    {
+      "email": "sajeeb@gmail.com",
+      "password": "$2a$10$DvPj2fUXVYU/az4Qk0Utkefpb7tKw2r1jmtKkZsUYPqgAXLntrqz.",
+      "id": 2
+    },
+    {
+      "email": "sajeebdebnath.cse@gmail.com",
+      "password": "$2a$10$32OmmrffPMGQYjm1HonlreLibPuB3sUaWj4/oltBlQpK5f3qqY0s2",
+      "id": 3
+    },
+    {
+      "email": "sajeebdn.cse@gmail.com",
+      "password": "$2a$10$lV72D6zCRPckVHXp1IWjruq1HQv4qouVxxH/FZ8IwoZH.b4bxjDzi",
+      "id": 4
+    },
+    {
+      "email": "sajeebdebnath336@gmail.com",
+      "password": "$2a$10$Z2.I7GAkQ3SkAaCp9tnQU.OnTJO0l1Imbk7Ui6pYEBc1nvYXu7bga",
+      "id": 5
     }
   ],
   "products": [
