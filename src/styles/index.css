@@ -512,7 +512,8 @@
   margin-top: 10px;
 }
 
-.product-details-information .cart-form form div > button {
+.product-details-information .cart-form form div > button,
+.single-cart-item .cart-item-info .cart-form form div > button {
   border: 1px solid var(--bgColor2);
   background: transparent;
   padding: 0px 10px;
@@ -531,19 +532,128 @@
   border-bottom: 1px solid #e5e6e7;
   margin-bottom: 10px;
 }
-.product-details-information .cart-form form > div {
+.product-details-information .cart-form form > div,
+.single-cart-item .cart-item-info .cart-form form > div {
   display: flex;
   gap: 10px;
 }
 
-.product-details-information .cart-form form div > button:hover {
+.product-details-information .cart-form form div > button:hover,
+.single-cart-item .cart-item-info .cart-form form div > button:hover {
   border-color: var(--bgColor);
   color: var(--bgColor);
 }
 
-.product-details-information .cart-form form div > input {
+.product-details-information .cart-form form div > input,
+.single-cart-item .cart-item-info .cart-form form div > input {
   border: 1px solid var(--bgColor2);
   width: 50px;
   padding-left: 20px;
 }
 /* ------------------------- Product Details Page CSS End --------------------- */
+
+/* ------------------------- Cart Page CSS Start --------------------- */
+.cart-details-area {
+  background: var(--sectionBg);
+  padding: 50px 0;
+}
+
+.cart-details-information-wrapper,
+.checkout-information-wrapper {
+  background: white;
+  padding: 20px;
+}
+
+.cart-details-information-wrapper .cart-title,
+.checkout-information-wrapper .checkout-title {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e5e6e7;
+}
+
+.single-cart-item {
+  display: flex;
+  position: relative;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid #e5e6e7;
+  margin: 15px 0;
+}
+
+.single-cart-item .cart-img {
+  width: 130px;
+  height: 120px;
+  box-shadow: 0.5px 0.866px 5px 0px rgb(0 0 0 / 20%);
+}
+
+.single-cart-item .cart-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.single-cart-item .remove-cart-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.single-cart-item .remove-cart-icon button {
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.single-cart-item .remove-cart-icon button:hover svg {
+  color: var(--bgColor);
+}
+
+.single-cart-item .cart-item-info .price {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.single-cart-item .cart-item-info .title {
+  font-size: 14px;
+  margin: 7px 0;
+}
+.single-cart-item .cart-item-info .cart-form .btn-main {
+  font-size: 12px;
+  padding: 5px 7px;
+  margin: 15px 0;
+}
+
+.cart-items-wrapper {
+  margin-top: 30px;
+}
+
+.cart-items-wrapper .sub-total-price {
+  text-align: right;
+  margin-top: 40px;
+}
+
+.cart-items-wrapper .sub-total-price h5 span {
+  margin-left: 20px;
+}
+
+.cart-items-wrapper .sub-total-price h5 {
+  text-transform: uppercase;
+}
+
+.single-cart-item:last-child {
+  border-bottom: none;
+}
+
+.checkout-information .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+.checkout-information-wrapper .btn-main {
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-top: 15px;
+}
+/* ------------------------- Cart Page CSS End --------------------- */
