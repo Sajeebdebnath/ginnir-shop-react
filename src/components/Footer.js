@@ -1,9 +1,21 @@
+import { useEffect } from "react"
 import { BsArrowRightShort } from "react-icons/bs"
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa"
 import { HiOutlineMail } from "react-icons/hi"
+import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import Logo from "../assets/img/Ginnir Shop Logo.png"
+import { productAllFetch } from "../redux/actionCreators/productActionCreator"
+
 const Footer = () => {
+  const dispatch = useDispatch()
+  const allProductList = useSelector((state) => state.product.allProducts)
+  const categories = [...new Set(allProductList?.map((category) => category.category))]
+
+  useEffect(() => {
+    dispatch(productAllFetch())
+  }, [dispatch])
+
   return (
     <footer>
       <div className='footer-area'>
@@ -42,15 +54,9 @@ const Footer = () => {
                   <p className='footer-title'>Categories</p>
                   <div className='footer-menu'>
                     <ul>
-                      <li>
-                        <Link to='#'>Fruits</Link>
-                      </li>
-                      <li>
-                        <Link to='#'>Mlik</Link>
-                      </li>
-                      <li>
-                        <Link to='#'>Meat</Link>
-                      </li>
+                      {categories.map((name, index) => {
+                        return <li key={index}>{name}</li>
+                      })}
                     </ul>
                   </div>
                 </div>

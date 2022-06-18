@@ -7,7 +7,7 @@ const ProductItem = ({ product }) => {
     <div className='single-product-item'>
       <div className='product-img'>
         <img src={image === "" ? Default_Img : image} alt={name} />
-        <Link to='/' className='btn product-view-button'>
+        <Link to={`/products/${id}`} className='btn product-view-button'>
           View Product
         </Link>
       </div>
@@ -22,7 +22,7 @@ const ProductItem = ({ product }) => {
         </div>
         <div className='product-info'>
           <h5 className='product-title'>{name}</h5>
-          <p className='price'>${price}</p>
+          <p className='price'>৳ {price}</p>
         </div>
       </div>
     </div>

@@ -178,6 +178,7 @@
   transition: 0.3s;
   z-index: 9;
   height: 240px;
+  margin-bottom: 10px;
 }
 .single-product-item .product-img:hover {
   box-shadow: 0.5px 0.866px 5px 0px rgb(0 0 0 / 20%);
@@ -252,13 +253,21 @@
 }
 
 .single-product-item .product-text .product-category-icon .product-cart-icon {
-  font-size: 20px;
+  font-size: 16px;
   cursor: pointer;
   transition: 0.3s;
+  width: 30px;
+  height: 30px;
+  background: black;
+  text-align: center;
+  border-radius: 50%;
+  line-height: 30px;
+  color: white;
 }
 
 .single-product-item .product-text .product-category-icon .product-cart-icon:hover {
-  color: var(--bgColor);
+  color: black;
+  background: var(--bgColor);
 }
 
 .product-items-area .product-title {
