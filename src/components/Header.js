@@ -1,9 +1,11 @@
-import { FaSearch, FaShoppingCart } from "react-icons/fa"
+import { FaShoppingCart } from "react-icons/fa"
 import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import Logo from "../assets/img/Ginnir Shop Logo.png"
+import SearchBar from "./SearchBar"
 
 const Header = () => {
+  const productList = useSelector((state) => state.product.allProducts)
   const token = useSelector((state) => state.auth.token)
   const userEmail = useSelector((state) => state.auth.userEmail)
   return (
@@ -16,19 +18,7 @@ const Header = () => {
                 <img src={Logo} alt='Ginnir Shop' />
               </Link>
             </div>
-            <div className='search-bar'>
-              <form action=''>
-                <input
-                  type='text'
-                  className='form-control'
-                  name='product_name'
-                  placeholder='What are you looking for?'
-                />
-                <span>
-                  <FaSearch />
-                </span>
-              </form>
-            </div>
+            <SearchBar suggestions={productList} />
             <div className='header-links'>
               <div className='product-cart-icon'>
                 <Link to='/cart'>
