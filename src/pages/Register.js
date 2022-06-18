@@ -63,12 +63,12 @@ const Register = () => {
                 <h3>Create an Account</h3>
                 {authFailedMsg !== null && (
                   <>
-                    <p className='alert alert-danger my-2'>{authFailedMsg}</p>
+                    <p className='alert alert-danger my-2 text-center'>{authFailedMsg}</p>
                   </>
                 )}
                 {authSuccessMsg !== null && (
                   <>
-                    <p className='alert alert-success my-2'>Account Creation Successful.</p>
+                    <p className='alert alert-success my-2 text-center'>Account Creation Successful.</p>
                   </>
                 )}
                 {authLoading ? (

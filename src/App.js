@@ -1,3 +1,5 @@
+import { useEffect } from "react"
+import { useDispatch } from "react-redux"
 import { Route, Routes } from "react-router-dom"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
@@ -6,8 +8,13 @@ import Home from "./pages/Home"
 import Login from "./pages/Login"
 import ProductDeatils from "./pages/ProductDetails"
 import Register from "./pages/Register"
+import { authCheck } from "./redux/actionCreators/authActionCreator"
 
 function App() {
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(authCheck())
+  }, [dispatch])
   return (
     <div>
       <Header />

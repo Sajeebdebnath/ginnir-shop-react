@@ -1,7 +1,11 @@
 import { FaSearch, FaShoppingCart } from "react-icons/fa"
+import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import Logo from "../assets/img/Ginnir Shop Logo.png"
+
 const Header = () => {
+  const token = useSelector((state) => state.auth.token)
+  const userEmail = useSelector((state) => state.auth.userEmail)
   return (
     <div>
       <header>
@@ -35,8 +39,17 @@ const Header = () => {
                 </Link>
               </div>
               <div className='account-link'>
-                <Link to='/login'>Login</Link>
-                <Link to='/register'>Register</Link>
+                {token === null ? (
+                  <>
+                    <Link to='/login'>Login</Link>
+                    <Link to='/register'>Register</Link>
+                  </>
+                ) : (
+                  <>
+                    <Link to='#'>{userEmail}</Link>
+                    <Link to='/register'>Logout</Link>
+                  </>
+                )}
               </div>
             </div>
           </div>

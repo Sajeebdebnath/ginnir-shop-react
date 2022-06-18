@@ -59,11 +59,10 @@ const authReducer = (state = authInitialState, action) => {
         ...state,
         isAuthenticated: false,
         token: null,
-        userId: null,
+        userEmail: null,
         authLoading: false,
         authFailedMsg: null,
         authSuccessMsg: null,
-        activationSuccess: false,
       }
     default:
       return state
