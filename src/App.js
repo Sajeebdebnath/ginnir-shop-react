@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux"
 import { Route, Routes } from "react-router-dom"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
+import PrivateOutlet from "./components/PrivateOutlet"
 import Cart from "./pages/Cart"
 import Home from "./pages/Home"
 import Login from "./pages/Login"
@@ -25,7 +26,9 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
         <Route path='/logout' element={<Logout />} />
-        <Route path='/cart' element={<Cart />} />
+        <Route path='/*' element={<PrivateOutlet />}>
+          <Route path='cart' element={<Cart />} />
+        </Route>
       </Routes>
       <Footer />
     </div>
