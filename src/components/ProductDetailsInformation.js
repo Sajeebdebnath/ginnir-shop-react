@@ -5,8 +5,8 @@ const ProductDetailsInformation = ({ singleProductData }) => {
   const { id, name, price, image, category, description } = singleProductData
   return (
     <div className='container'>
-      <div className='row'>
-        <div className='col-lg-6'>
+      <div className='row align-items-center'>
+        <div className='col-lg-4 offset-lg-1'>
           <div className='product-image'>
             <img src={image === "" ? Product_Image : image} alt='' />
           </div>
@@ -19,20 +19,18 @@ const ProductDetailsInformation = ({ singleProductData }) => {
 
             <div className='cart-form'>
               <form action=''>
-                <button>-</button>
-                <input type='number' min='0' />
-                <button>+</button>
+                <div>
+                  <button>-</button>
+                  <input type='text' pattern='[0-9]*' value='1' />
+                  <button>+</button>
+                </div>
                 <FormButton name='Add to Cart' />
               </form>
             </div>
-          </div>
-        </div>
-      </div>
-      <div className='row'>
-        <div className='col-lg-12'>
-          <div className='product-description'>
-            <h4>Description</h4>
-            <p>{description}</p>
+            <div className='product-description'>
+              <h4>Description</h4>
+              <p>{description}</p>
+            </div>
           </div>
         </div>
       </div>

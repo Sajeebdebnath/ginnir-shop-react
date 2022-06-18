@@ -462,3 +462,88 @@
   font-weight: 600;
 }
 /* ------------------------- Registration & Login Page CSS End --------------------- */
+
+/* ------------------------- Product Details Page CSS Start --------------------- */
+.product-details-area {
+  margin: 50px 0;
+}
+
+.product-details-area .product-image {
+  height: 350px;
+  overflow: hidden;
+  box-shadow: 0.5px 0.866px 5px 0px rgb(0 0 0 / 20%);
+}
+
+.product-details-area .product-image img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.product-details-area .product-image:hover img {
+  transform: scale(1.3);
+}
+.product-details-information .category {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 3px;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.product-details-information .title {
+  font-weight: 300;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.product-details-information .price {
+  font-weight: bold;
+}
+
+.product-details-information .cart-form {
+  margin: 20px 0;
+}
+
+.product-details-information .cart-form .btn-main {
+  display: block;
+  font-size: 12px;
+  padding: 7px 10px;
+  margin-top: 10px;
+}
+
+.product-details-information .cart-form form div > button {
+  border: 1px solid var(--bgColor2);
+  background: transparent;
+  padding: 0px 10px;
+  font-size: 16px;
+  color: var(--bgColor2);
+  transition: 0.3s;
+}
+
+.product-details-information .product-description {
+  margin-top: 30px;
+}
+
+.product-details-information .product-description h4 {
+  font-weight: 500;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #e5e6e7;
+  margin-bottom: 10px;
+}
+.product-details-information .cart-form form > div {
+  display: flex;
+  gap: 10px;
+}
+
+.product-details-information .cart-form form div > button:hover {
+  border-color: var(--bgColor);
+  color: var(--bgColor);
+}
+
+.product-details-information .cart-form form div > input {
+  border: 1px solid var(--bgColor2);
+  width: 50px;
+  padding-left: 20px;
+}
+/* ------------------------- Product Details Page CSS End --------------------- */
