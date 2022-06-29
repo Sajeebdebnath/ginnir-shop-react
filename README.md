@@ -1,3 +1,5 @@
+## Ginnir Shop is an E-Commerce platform, which provide online grocery service for customer.
+
 # Setup
 
 **Node 14 is required for this project.**
