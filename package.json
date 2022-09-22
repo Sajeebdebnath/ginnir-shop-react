@@ -21,9 +21,10 @@
     "redux-thunk": "^2.4.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "api": "json-server --watch db.json --port 4000  -m ./node_modules/json-server-auth"
+    "start:main": "react-scripts start",
+    "start:api": "json-server --watch db.json --port 4000  -m ./node_modules/json-server-auth",
+    "start": "run-p start:*",
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
@@ -41,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
   }
 }
