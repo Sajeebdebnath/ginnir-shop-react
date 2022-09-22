@@ -8,8 +8,7 @@ First install npm packages `npm install`
 
 ## Run
 
-- API server `npm run api`
-- Development server `npm start`
+- Start both API and Development server `npm start`
 
 Check `package.json` for more details.
 
